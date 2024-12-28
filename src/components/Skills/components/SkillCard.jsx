@@ -3,65 +3,42 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
+import Rating from '@mui/material/Rating';
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+
 
 const SkillCard = (props) => {
     const { Sector, Skill } = props;
 
     return (
         <div>
-            <Card
-                sx={{
-                    width: "100%",
-                    maxWidth: 350, // Limit the card's width
-                    background: "transparent",
-                    border: "1px solid orange",
-                    padding: 1, // Adds some spacing inside the card
-                    marginBottom: 3, // Adds space between cards
-                    "&:hover": {
-                        boxShadow: 3, // Hover effect to add a shadow
-                    },
-                }}
-            >
+            <Card sx={{ width: "100%", minHeight: 140, minWidth:350, maxWidth: 350, background: "transparent", border: "1px solid gray", marginBottom: 3, transition:"all 0.3 linear", "&:hover": { boxShadow:"2px 2px 20px 2px white", borderColor:"white"}, }}>
+
                 <CardContent>
-                    <Typography variant="h6" component="div" sx={{ marginBottom: 2, textAlign:{xs:"center", sm:"center", md:"left"} }}>
+                    <Typography variant="h6" component="div" sx={{ marginBottom: 2, textAlign: { xs: "center", sm: "center", md: "left" } }}>
                         {Sector}
                     </Typography>
-                    <Grid
-                        container
-                        spacing={2} // Space between grid items
-                        sx={{
-                            alignItems: "center",
-                            justifyContent: "flex-start", // Align items to the start
-                        }}
-                    >
+
+                    <Grid container spacing={2} sx={{ alignItems: "center", justifyContent: "center" }}>
                         {Skill.map((skill) => (
-                            <Grid
-                                key={skill.key}
-                                item
-                                xs={6} // Ensure each skill takes up half the width on small screens
-                                sm={4} // Adjust based on screen size
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: "column", // Stack the image and text
-                                    alignItems: "center", // Center align items horizontally
-                                    textAlign: "center", // Center align text
-                                }}
-                            >
-                                <img
-                                    src={skill.url}
-                                    height={30}
-                                    alt={skill.skillName}
-                                    style={{
-                                        objectFit: "contain", // Ensures proper image scaling
-                                    }}
-                                />
+
+                            <Grid key={skill.key} item xs={6} sm={4} sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center"}}>
+                                <img src={skill.url} height={40} alt={skill.skillName} style={{ objectFit: "contain" }} />
                                 <Typography component="span" sx={{ marginTop: 1 }}>
                                     {skill.skillName}
                                 </Typography>
+                                    <Rating value={skill.rating} precision={0.5} readOnly size="small" 
+                                    icon={<StarIcon  style={{ fill: 'white', fontSize:"20px" }} />}
+                                    emptyIcon={<StarBorderIcon style={{ fill: 'white', fontSize:"20px" }} />} />
                             </Grid>
+
                         ))}
+
                     </Grid>
+
                 </CardContent>
+
             </Card>
         </div>
     );

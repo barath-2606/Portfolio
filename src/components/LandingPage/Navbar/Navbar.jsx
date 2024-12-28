@@ -25,13 +25,7 @@ const Navbar = () => {
 
                         <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "space-between",  width:"25%"}}>
                             {menuItems.map((item, index) => (
-                                <Typography
-                                    key={index}
-                                    className="menu"
-                                    sx={{ color: "white", fontFamily: "Lexend", fontWeight: "500", "&:hover": { color: "orange", cursor: "pointer" } }}
-                                >
-                                    {item}
-                                </Typography>
+                                <Typography key={index} className="menu" sx={{ color: "white", fontFamily: "Lexend", fontWeight: "500", "&:hover": { color: "orange", cursor: "pointer" } }} > {item} </Typography>
                             ))}
                         </Box>
 
