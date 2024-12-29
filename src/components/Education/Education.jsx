@@ -4,7 +4,7 @@ import { Box, Divider, Typography } from "@mui/material"
 const Education = () => {
   return (
     <>
-      <Box  >
+      <Box  sx={{margin:"10px 0"}}>
         <Divider><Typography variant="h5" component="span" sx={{ fontFamily: 'Chakra Petch', marginX: { md: "10%" } }}>
           Education
         </Typography></Divider>
