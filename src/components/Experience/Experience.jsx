@@ -6,7 +6,7 @@ const Experience = () => {
     const ExperienceDetails = [
         {
             id:1,
-            Role: "Full Stack Developer",
+            Role: "FullStack Developer",
             Company : "Flattrade",
             Duration : "Feb 2023 - Present",
             ProjectPoints : [
@@ -34,7 +34,7 @@ const Experience = () => {
                 <Typography variant="body1" sx={{ fontFamily: 'Chakra Petch', marginX: { md: "20%", sm:"5%", xs:"5%" }, textAlign:"center", marginY:"10px" }}>
                     Here is a glimpse into my journey as a full-stack web developer, showcasing the skills and expertise I’ve honed over time. My portfolio reflects the diverse technologies I’ve mastered and highlights my passion for creating impactful web solutions.</Typography>
             </Box>
-            <Box sx={{display:"flex", justifyContent:"center"}}>
+            <Box sx={{display:"flex", justifyContent:"center", marginBottom:{sm:0, xs:0, md:4}}}>
                 
                 {ExperienceDetails.map((item) =>(
                     <Exp ProjectList={item} key={item.id}></Exp>

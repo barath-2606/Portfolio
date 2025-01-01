@@ -6,14 +6,39 @@ import PropTypes from 'prop-types';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos';
+import { useEffect } from "react";
 
 
 const SkillCard = (props) => {
-    const { Sector, Skill } = props;
+    const { Sector, Skill, Animation } = props;
+
+    useEffect(() => {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000, // Animation duration in ms
+                offset: 50, // Offset in px for triggering animation
+                easing: 'ease-in-out', // Easing type
+                once: false, // Keep animations running every time they come into view
+            });
+    
+            // Re-initialize AOS on window scroll
+            const handleScroll = () => {
+                AOS.refresh();
+            };
+    
+            window.addEventListener("scroll", handleScroll);
+    
+            // Clean up the event listener on component unmount
+            return () => {
+                window.removeEventListener("scroll", handleScroll);
+            };
+        }, []);
 
     return (
         <div>
-            <Card sx={{ width: "100%", minHeight: 140, minWidth:350, maxWidth: 350, background: "transparent", border: "1px solid gray", marginBottom: 3, transition:"all 0.3 linear", "&:hover": { boxShadow:"2px 2px 20px 2px white", borderColor:"white"}, }}>
+            <Card sx={{ width: "100%", minHeight: 290, minWidth:350, maxWidth: 350, background: "transparent", border: "1px solid gray", marginBottom: 3, transition:"all 0.3 linear", "&:hover": { boxShadow:"2px 2px 20px 2px white", borderColor:"white"}, marginX:{sm:"5%", xs:"55", md:"0"}}} data-aos={Animation}>
 
                 <CardContent>
                     <Typography variant="h6" component="div" sx={{ marginBottom: 2, textAlign: { xs: "center", sm: "center", md: "left" } }}>
@@ -53,6 +78,7 @@ SkillCard.propTypes = {
             skillName: PropTypes.string.isRequired,
         })
     ).isRequired,
+    Animation: PropTypes.string.isRequired,
 };
 
 export default SkillCard;

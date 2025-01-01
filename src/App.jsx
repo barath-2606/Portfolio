@@ -4,6 +4,7 @@ import Navbar from "./components/LandingPage/Navbar/Navbar";
 import Skill from "./components/Skills/Skill";
 import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Skill />
         <Experience></Experience>
         <Education/>
+        <Contact/>
       </div>
     </StrictMode>
   );
