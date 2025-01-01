@@ -1,7 +1,7 @@
 import{ useState } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Typography, Box, AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Typography, Box, AppBar, Toolbar, Drawer, List, ListItem, ListItemText } from '@mui/material';
+// import MenuIcon from '@mui/icons-material/Menu';IconButton
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <div>
             <Box>
-                <AppBar sx={{ backgroundColor: 'rgba(79, 78, 79, 0.25)', borderRadius: '2%' }}>
+                <AppBar sx={{ backgroundColor: 'black', borderRadius: '2%' }}>
                     <Toolbar sx={{ justifyContent: 'space-between ' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: '10%'}}>
                             <AccountCircleIcon sx={{ fontSize: '30px' }} />
@@ -30,12 +30,12 @@ const Navbar = () => {
                         </Box>
 
                         {/* Hamburger menu for mobile view */}
-                        <IconButton
+                        {/* <IconButton
                             sx={{ display: { xs: "flex", md: "none" }, color: "white" }}
                             onClick={() => toggleDrawer(true)}
                         >
                             <MenuIcon />
-                        </IconButton>
+                        </IconButton> */}
                     </Toolbar>
                 </AppBar>
 
