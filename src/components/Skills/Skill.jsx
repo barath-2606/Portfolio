@@ -13,7 +13,7 @@
 //                 </Typography></Divider>
 //             </Box>
 //             <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: { sm: "center", xs: "center", md: "space-between" }, marginX: { md: "10%", sm: "5%", xs: "5%" }, marginY: 2 }} >
-//                 <SkillCard data-aos="fade-up"
+//                 <SkillCard data-aos="zoom-in-up"
 //                     Sector={"Front End"}
 //                     Skill={[
 //                         { key: 1, url: "/Images/Skills/HTML5.png", skillName: "HTML 5", rating: 4.5 },
@@ -25,7 +25,7 @@
 //                     ]}
 //                 />
 
-//                 <SkillCard data-aos="fade-up"
+//                 <SkillCard data-aos="zoom-in-up"
 //                     Sector={"Back End"}
 //                     Skill={[
 //                         { key: 1, url: "/Images/Skills/Python.png", skillName: "Python", rating: 3 },
@@ -69,7 +69,7 @@
 //                     ]}
 //                 /> */}
 
-//                 <SkillCard data-aos="fade-up"
+//                 <SkillCard data-aos="zoom-in-up"
 //                     Sector={"Tools"}
 //                     Skill={[
 //                         { key: 1, url: "/Images/Skills/Git.png", skillName: "Git", rating: 4.5 },
@@ -99,7 +99,7 @@ const Skill = () => {
     useEffect(() => {
         // Initialize AOS
         AOS.init({
-            duration: 1000, // Animation duration in ms
+            duration: 500, // Animation duration in ms
             offset: 50, // Offset in px for triggering animation
             easing: 'linear', // Easing type
             once: false, // Keep animations running every time they come into view
@@ -120,12 +120,12 @@ const Skill = () => {
 
     return (
         <>
-            <Box data-aos="fade-down">
+            <Box>
                 <Divider><Typography variant="h5" component="span" sx={{ fontFamily: 'Chakra Petch', marginX: { md: "10%" } }}>
                     Skills
                 </Typography></Divider>
             </Box>
-            <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: { sm: "center", xs: "center", md: "space-between" }, marginX: { md: "10%", sm: "5%", xs: "5%" }, marginY: {sm:2, xs:2, md:4} }} >
+            <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: { sm: "center", xs: "center", md: "space-between" }, marginX: { md: "10%", sm: "5%", xs: "5%" }, marginY: {sm:2, xs:2, md:4} }} data-aos="zoom-in-up" >
                 <SkillCard
                     Sector={"Front End"}
                     Skill={[
@@ -136,7 +136,7 @@ const Skill = () => {
                         { key: 5, url: "/Images/Skills/React.png", skillName: "React Js", rating: 3 },
                         { key: 6, url: "/Images/Skills/Vue.png", skillName: "Vue Js", rating: 3.5 },
                     ]}
-                    Animation={"fade-left"}
+                    Animation={"zoom-in-up"}
                 />
 
                 <SkillCard
@@ -149,7 +149,7 @@ const Skill = () => {
                         { key: 5, url: "/Images/Skills/PostgresSQL.png", skillName: "PostgreSQL", rating: 4 },
                         { key: 6, url: "/Images/Skills/MySQL.png", skillName: "MySQL", rating: 4.5 },
                     ]}
-                    Animation={"fade-up"}
+                    Animation={"zoom-in-up"}
                 />
 
                 <SkillCard
@@ -159,7 +159,7 @@ const Skill = () => {
                         { key: 2, url: "/Images/Skills/Vscode.png", skillName: "VS Code", rating: 4 },
                         { key: 3, url: "/Images/Skills/Postman.png", skillName: "Postman", rating: 4.5 },
                     ]}
-                    Animation={"fade-right"}
+                    Animation={"zoom-in-up"}
                 />
             </Box>
         </>

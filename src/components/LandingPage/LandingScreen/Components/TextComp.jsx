@@ -11,9 +11,9 @@ const TextComp = () => {
   useEffect(() => {
     // Initialize AOS
     AOS.init({
-      duration: 1000, // Animation duration in ms
+      duration: 500, // Animation duration in ms
       offset: 50, // Offset in px for triggering animation
-      easing: 'ease-in-out', // Easing type
+      easing: 'linear', // Easing type
       once: false, // Keep animations running every time they come into view
     });
 
@@ -32,7 +32,7 @@ const TextComp = () => {
 
   return (
     <div>
-      <Box sx={{ width: { md: "80%" }, marginTop: { xs: "20px", md: "50px" }, display: "flex", flexDirection: "column", justifyContent: "center", paddingX: { xs: 2, sm: 0 } }} data-aos="fade-right">
+      <Box sx={{ width: { md: "80%" }, marginTop: { xs: "20px", md: "50px" }, display: "flex", flexDirection: "column", justifyContent: "center", paddingX: { xs: 2, sm: 0 } }} data-aos="zoom-in-up">
         <Box sx={{ marginBottom: "10px" }}>
           <Typography variant="h6" sx={{ textAlign: { xs: "center", sm: "center", md: "Left" }, fontFamily: "Chakra Petch" }}> Hello, I&apos;m </Typography>
         </Box>

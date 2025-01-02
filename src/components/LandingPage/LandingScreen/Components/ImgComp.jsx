@@ -9,7 +9,7 @@ const ImgComp = () => {
   useEffect(() => {
       // Initialize AOS
       AOS.init({
-        duration: 1000, // Animation duration in ms
+        duration: 500, // Animation duration in ms
         offset: 50, // Offset in px for triggering animation
         easing: 'ease-in-out', // Easing type
         once: false, // Keep animations running every time they come into view
@@ -29,7 +29,7 @@ const ImgComp = () => {
     }, []);
 
   return (
-    <Box sx={{ marginRight: {md:"20px"}, display: "flex", justifyContent: "center", alignItems: "center", height: { xs: 300, sm: 400, md: 500 }, width: "100%", overflow: "hidden", marginTop:{xs:"20px", sm:"20px"} }} data-aos="fade-left">
+    <Box sx={{ marginRight: {md:"20px"}, display: "flex", justifyContent: "center", alignItems: "center", height: { xs: 300, sm: 400, md: 500 }, width: "100%", overflow: "hidden", marginTop:{xs:"20px", sm:"20px"} }} data-aos="zoom-in-up">
       <img src={LandingImg} alt="Landing" style={{ maxWidth: "100%", height: "90%", objectFit: "cover" }} />
     </Box>
 

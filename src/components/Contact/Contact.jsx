@@ -10,16 +10,17 @@ import StepLabel from '@mui/material/StepLabel';
 import StepContent from '@mui/material/StepContent';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
 
     useEffect(() => {
         // Initialize AOS
         AOS.init({
-            duration: 1000, // Animation duration in ms
+            duration: 500, // Animation duration in ms
             offset: 50, // Offset in px for triggering animation
-            easing: 'ease-in-out', // Easing type
+            easing: 'linear', // Easing type
             once: false, // Keep animations running every time they come into view
         });
 
@@ -55,12 +56,59 @@ const Contact = () => {
         window.open("mailto:recipient@example.com?subject=Your%20Subject&body=Your%20message%20here", "_blank", "noopener,noreferrer");
     }
 
+    const[name, setName] = useState("");
+    const [toEmail, setToEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+    const [status, setStatus] = useState("");
 
+    const HandleMailChange = (e) =>{
+        setToEmail(e.target.value)
+    }
+
+    const HandleSubjectChange = (e) =>{
+        setSubject(e.target.value)
+    }
+
+    const HandleMessageChange = (e) =>{
+        setMessage(e.target.value)
+    }
+
+    const HandleNameChange = (e) =>{
+        setName(e.target.value)
+    }
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        const templateParams = {
+            from_name:name,
+            to_name: toEmail,
+            subject,
+            message,
+            reply_to:toEmail
+        };
+
+        emailjs
+            .send("service_26etqx4", "template_zvs4y38", templateParams, "jvHvSAMbV4erUPi6-")
+           
+            .then(
+                (response) => {
+                    console.log("Email sent successfully:", response);
+                    setStatus("Email sent successfully!");
+                },
+                (error) => {
+                    console.error("Error sending email:", error);
+                    setStatus("Error sending email.");
+                }
+            );
+            console.log(status)
+    };
 
     return (
         <>
-            <Box sx={{ display: "flex", justifyContent: "center", gap: "40px", marginTop: { md: "30px", sm: "5px", xs: "5px" }, marginBottom: "2%" }}>
-                <Box sx={{ display: { sm: "none", xs: "none", md: "flex", flexDirection: "column", backgroundColor: "rgba(79, 78, 79, 0.35)", borderRadius: "15px", padding: "10px" } }} data-aos="fade-right">
+            <Box sx={{ display: "flex", justifyContent: "center", gap: "40px", marginTop: { md: "30px", sm: "5px", xs: "5px" }, marginBottom: "5%" }}>
+                <Box sx={{ display: { sm: "none", xs: "none", md: "flex", flexDirection: "column", backgroundColor: "rgba(79, 78, 79, 0.35)", borderRadius: "15px", padding: "10px" } }} data-aos="zoom-in-up">
 
                     <Typography sx={{ m: 2, textAlign: "center", fontWeight: "bold", fontFamily: "Titillium web", }} variant="h4">Feel free to Contact</Typography>
 
@@ -86,20 +134,25 @@ const Contact = () => {
                     <Typography textAlign={"center"} marginTop={3} fontFamily={"Titillium Web"} variant="h6" color="orange">Thank You!</Typography>
 
                 </Box>
-                <Box sx={{ backgroundColor: "rgb(250, 242, 242)", display: "flex", flexDirection: "column", justifyContent: "center", width: "400px", borderRadius: "15px", marginX: { sm: "5%", xs: "5%", md: "0" } }} data-aos="fade-left">
+                <Box sx={{ backgroundColor: "rgb(250, 242, 242)", display: "flex", flexDirection: "column", justifyContent: "center", width: "400px", borderRadius: "15px", marginX: { sm: "5%", xs: "5%", md: "0" } }} data-aos="zoom-in-up">
                     <Typography textAlign={'center'} variant="h5" sx={{ m: 1, color: "black", fontFamily: "Titillium Web", fontWeight: "bold" }}>Get In Touch</Typography>
-                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Name" size="small" />
 
-                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Email" size="small" />
-
-                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Subject" size="small" />
-
-                    <TextField color="black" sx={{ marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, marginBottom: "10px" }} label="Message" size="small" multiline rows={5} />
+                    {/* TextField For Enter UserName */}
+                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Name" size="small" onChange={HandleNameChange} />
+                    
+                    {/* TextField for Enter User Mail Id */}
+                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Email" size="small" onChange={HandleMailChange} />
+                    
+                    {/* TextField for enter Subject of the Mail */}
+                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Subject" size="small" onChange={HandleSubjectChange} />
+                    
+                    {/* TextField for enter the Message */}
+                    <TextField color="black" sx={{ marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, marginBottom: "10px" }} label="Message" size="small" multiline rows={5} onChange={HandleMessageChange} />
 
                     {/* <TextField color="white" label="Email" sx={{ marginBottom:"20px", marginX:"3%"}} size="small"></TextField>
                 <TextField color="white" label="Subject" sx={{ marginBottom:"20px", marginX:"3%"}} size="small"></TextField>
                 <TextField color="white" label="Message" sx={{ marginBottom:"20px", marginX:"3%"}} size="small" multiline rows={5}></TextField> */}
-                    <Button sx={{ backgroundColor: "black", color: "white", marginX: "3%", border: "2px solid black", m: 1, borderRadius: "10px", "&:hover": { backgroundColor: "transparent", border: "2px solid black", color: "black" } }}>Send</Button>
+                    <Button sx={{ backgroundColor: "black", color: "white", marginX: "3%", border: "2px solid black", m: 1, borderRadius: "10px", "&:hover": { backgroundColor: "transparent", border: "2px solid black", color: "black" } }} onClick={sendEmail}>Send</Button>
 
                     <Divider><Typography color="black">Or</Typography></Divider>
 
