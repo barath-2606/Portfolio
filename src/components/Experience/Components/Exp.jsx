@@ -12,9 +12,9 @@ const Exp = ({ ProjectList }) => {
   useEffect(() => {
     // Initialize AOS
     AOS.init({
-      duration: 1000, // Animation duration in ms
+      duration: 500, // Animation duration in ms
       offset: 50, // Offset in px for triggering animation
-      easing: 'ease-in-out', // Easing type
+      easing: 'linear', // Easing type
       once: false, // Keep animations running every time they come into view
     });
 
@@ -33,7 +33,7 @@ const Exp = ({ ProjectList }) => {
 
   return (
     <>
-      <Box width={600} sx={{ backgroundColor: "peachpuff", borderRadius: "10px", marginX: { sm: "5%", xs: "5%" }, padding: "15px 10px" }} data-aos="fade-up">
+      <Box width={600} sx={{ backgroundColor: "peachpuff", borderRadius: "10px", marginX: { sm: "5%", xs: "5%" }, padding: "15px 10px" }} data-aos="zoom-in-up">
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "5px" }}>
           <img src={Flattrade} height={60}></img>
           <Divider></Divider>
@@ -66,7 +66,7 @@ const Exp = ({ ProjectList }) => {
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap", marginY: "10px", gap: { xs: "10px", sm: "10px" } }}>
           {ProjectList.ProjectPoints.map((item) => (
-            <Project Points={item} key={item.id} />
+            <Project Points={item} key={item.Title} />
           ))}
         </Box>
       </Box>
