@@ -11,7 +11,7 @@ const ImgComp = () => {
       AOS.init({
         duration: 500, // Animation duration in ms
         offset: 50, // Offset in px for triggering animation
-        easing: 'ease-in-out', // Easing type
+        easing: 'linear', // Easing type
         once: false, // Keep animations running every time they come into view
       });
   
