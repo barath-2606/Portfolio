@@ -38,7 +38,7 @@ const SkillCard = (props) => {
 
     return (
         <div>
-            <Card sx={{ width: "100%", minHeight: 290, minWidth:350, maxWidth: 350, background: "transparent", border: "1px solid gray", marginBottom: 3, transition:"all 0.3 linear", "&:hover": { boxShadow:"2px 2px 20px 2px white", borderColor:"white"}, marginX:{sm:"5%", xs:"5px", md:"0"}}} data-aos={Animation}>
+            <Card sx={{ width: "100%", minHeight: 290, minWidth:{md:350, sx:300,sm:300}, maxWidth: 350, background: "transparent", border: "1px solid gray", marginBottom: 3, transition:"all 0.3 linear", "&:hover": { boxShadow:"2px 2px 20px 2px white", borderColor:"white"}, marginX:{sm:"5%", xs:"0", md:"0"}}} data-aos={Animation}>
 
                 <CardContent>
                     <Typography variant="h6" component="div" sx={{ marginBottom: 2, textAlign: { xs: "center", sm: "center", md: "left" } }}>
