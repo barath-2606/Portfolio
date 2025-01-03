@@ -1,4 +1,4 @@
-import { Box, Button, Divider, TextField, Typography, IconButton } from "@mui/material"
+import { Box, Button, Divider, TextField, Typography, IconButton, Alert } from "@mui/material"
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -12,8 +12,21 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Snackbar from '@mui/material/Snackbar';
 
 const Contact = () => {
+
+    const [open, setOpen] = useState(false);
+    const [mode, setMode] = useState("")
+    const [msg, setMsg] = useState("")
+
+    const vertical = "bottom"
+    const horizontal = "center"
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
 
     useEffect(() => {
         // Initialize AOS
@@ -56,53 +69,63 @@ const Contact = () => {
         window.open("mailto:recipient@example.com?subject=Your%20Subject&body=Your%20message%20here", "_blank", "noopener,noreferrer");
     }
 
-    const[name, setName] = useState("");
+    const [name, setName] = useState("");
     const [toEmail, setToEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
 
-    const HandleMailChange = (e) =>{
+    const HandleMailChange = (e) => {
         setToEmail(e.target.value)
     }
 
-    const HandleSubjectChange = (e) =>{
+    const HandleSubjectChange = (e) => {
         setSubject(e.target.value)
     }
 
-    const HandleMessageChange = (e) =>{
+    const HandleMessageChange = (e) => {
         setMessage(e.target.value)
     }
 
-    const HandleNameChange = (e) =>{
+    const HandleNameChange = (e) => {
         setName(e.target.value)
     }
 
     const sendEmail = (e) => {
         e.preventDefault();
-
         const templateParams = {
-            from_name:name,
+            from_name: name,
             to_name: toEmail,
             subject,
             message,
-            reply_to:toEmail
+            reply_to: toEmail
         };
 
-        emailjs
-            .send("service_26etqx4", "template_zvs4y38", templateParams, "jvHvSAMbV4erUPi6-")
-           
-            .then(
-                (response) => {
-                    console.log("Email sent successfully:", response);
-                    setStatus("Email sent successfully!");
-                },
-                (error) => {
-                    console.error("Error sending email:", error);
-                    setStatus("Error sending email.");
-                }
-            );
-            console.log(status)
+        if ((templateParams.from_name != "") && (templateParams.to_name != "") && (templateParams.subject != "") && (templateParams.message != "") && (templateParams.reply_to != "")) {
+            emailjs.send("service_26etqx4", "template_zvs4y38", templateParams, "jvHvSAMbV4erUPi6-")
+
+                .then(
+                    (response) => {
+                        console.log("Email sent successfully:", response);
+                        setOpen(true);
+                        setMode("success")
+                        setStatus("Email sent successfully!");
+                        setMsg("Email sent successfully!");
+                    },
+                    (error) => {
+                        console.error("Error sending email:", error);
+                        setStatus("Error sending email.");
+                        setMode("error")
+                        setMsg("Error sending email.");
+                        setOpen(true);
+                    }
+                );
+        }else{
+            setMode("error")
+            setOpen(true)
+            setMsg("Invalid Details")
+        }
+        console.log(status)
     };
 
     return (
@@ -139,13 +162,13 @@ const Contact = () => {
 
                     {/* TextField For Enter UserName */}
                     <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Name" size="small" onChange={HandleNameChange} />
-                    
+
                     {/* TextField for Enter User Mail Id */}
                     <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Email" size="small" onChange={HandleMailChange} />
-                    
+
                     {/* TextField for enter Subject of the Mail */}
                     <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Subject" size="small" onChange={HandleSubjectChange} />
-                    
+
                     {/* TextField for enter the Message */}
                     <TextField color="black" sx={{ marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, marginBottom: "10px" }} label="Message" size="small" multiline rows={5} onChange={HandleMessageChange} />
 
@@ -164,6 +187,11 @@ const Contact = () => {
                         <IconButton onClick={WhatsappIcon} size="small"> <WhatsAppIcon sx={{ "&:hover": { fill: "orange" }, fill: "black" }} /> </IconButton>
                     </Box>
                 </Box>
+                <Snackbar anchorOrigin={{vertical, horizontal}} open={open} autoHideDuration={5000} onClose={handleClose}>
+                    <Alert onClose={handleClose} severity={mode} variant="filled" sx={{ width: '100%' }} >
+                        { msg }
+                    </Alert>
+                </Snackbar>
             </Box>
         </>
     )
