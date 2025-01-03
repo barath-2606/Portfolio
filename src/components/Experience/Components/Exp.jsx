@@ -1,5 +1,5 @@
 import { Box, Divider, Table, TableBody, TableCell, TableContainer, TableRow, tableCellClasses } from "@mui/material"
-import Flattrade from "/Images/Skills/Flattrade.png"
+import Flattrade from "/Images/Flattrade.png"
 import Project from "./Project"
 import PropTypes from 'prop-types'
 import './Project.css'
