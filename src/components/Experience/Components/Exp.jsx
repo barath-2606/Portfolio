@@ -64,7 +64,7 @@ const Exp = ({ ProjectList }) => {
             </TableContainer>
           </Box>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap", marginY: "10px", gap: { xs: "10px", sm: "10px" } }}>
+        <Box sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap", marginY: "35px", gap: { xs: "10px", sm: "10px" } }}>
           {ProjectList.ProjectPoints.map((item) => (
             <Project Points={item} key={item.Title} />
           ))}
