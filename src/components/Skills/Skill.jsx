@@ -16,27 +16,27 @@
 //                 <SkillCard data-aos="zoom-in-up"
 //                     Sector={"Front End"}
 //                     Skill={[
-//                         { key: 1, url: "/Images/HTML5.png", skillName: "HTML 5", rating: 4.5 },
-//                         { key: 2, url: "/Images/CSS3.png", skillName: "CSS 3", rating: 4.5 },
-//                         { key: 3, url: "/Images/JavaScript.png", skillName: "JavaScript", rating: 3.5 },
-//                         { key: 4, url: "/Images/Bootstrap.png", skillName: "Bootstrap", rating: 4 },
-//                         { key: 5, url: "/Images/React.png", skillName: "React Js", rating: 3 },
-//                         { key: 6, url: "/Images/Vue.png", skillName: "Vue Js", rating: 3.5 },
+//                         { key: 1, url: "/Portfolio/Images/Skills/HTML5.png", skillName: "HTML 5", rating: 4.5 },
+//                         { key: 2, url: "/Portfolio/Images/Skills/CSS3.png", skillName: "CSS 3", rating: 4.5 },
+//                         { key: 3, url: "/Portfolio/Images/Skills/JavaScript.png", skillName: "JavaScript", rating: 3.5 },
+//                         { key: 4, url: "/Portfolio/Images/Skills/Bootstrap.png", skillName: "Bootstrap", rating: 4 },
+//                         { key: 5, url: "/Portfolio/Images/Skills/React.png", skillName: "React Js", rating: 3 },
+//                         { key: 6, url: "/Portfolio/Images/Skills/Vue.png", skillName: "Vue Js", rating: 3.5 },
 //                     ]}
 //                 />
 
 //                 <SkillCard data-aos="zoom-in-up"
 //                     Sector={"Back End"}
 //                     Skill={[
-//                         { key: 1, url: "/Images/Python.png", skillName: "Python", rating: 3 },
-//                         { key: 2, url: "/Images/Go.png", skillName: "Go Lang", rating: 3.5 },
-//                         { key: 3, url: "/Images/Node1.png", skillName: "Node Js", rating: 2 },
-//                         { key: 4, url: "/Images/MongoDB.png", skillName: "MongoDB", rating: 4.5 },
-//                         { key: 5, url: "/Images/PostgresSQL.png", skillName: "PostgreSQL", rating: 4 },
-//                         { key: 6, url: "/Images/MySQL.png", skillName: "MySQL", rating: 4.5 },
-//                         // { key: 4, url: "/Images/Bootstrap.png", skillName: "Postgres", rating: 4 },
-//                         // { key: 5, url: "/Images/React.png", skillName: "MS SQL", rating: 4 },
-//                         // { key: 6, url: "/Images/Vue.png", skillName: "MySql", rating: 4 },
+//                         { key: 1, url: "/Portfolio/Images/Skills/Python.png", skillName: "Python", rating: 3 },
+//                         { key: 2, url: "/Portfolio/Images/Skills/Go.png", skillName: "Go Lang", rating: 3.5 },
+//                         { key: 3, url: "/Portfolio/Images/Skills/Node1.png", skillName: "Node Js", rating: 2 },
+//                         { key: 4, url: "/Portfolio/Images/Skills/MongoDB.png", skillName: "MongoDB", rating: 4.5 },
+//                         { key: 5, url: "/Portfolio/Images/Skills/PostgresSQL.png", skillName: "PostgreSQL", rating: 4 },
+//                         { key: 6, url: "/Portfolio/Images/Skills/MySQL.png", skillName: "MySQL", rating: 4.5 },
+//                         // { key: 4, url: "/Portfolio/Images/Skills/Bootstrap.png", skillName: "Postgres", rating: 4 },
+//                         // { key: 5, url: "/Portfolio/Images/Skills/React.png", skillName: "MS SQL", rating: 4 },
+//                         // { key: 6, url: "/Portfolio/Images/Skills/Vue.png", skillName: "MySql", rating: 4 },
 //                     ]}
 //                 />
 
@@ -44,9 +44,9 @@
 //                     Sector={"Database"}
 //                     Skill={[
 
-//                         // { key: 4, url: "/Images/Bootstrap.png", skillName: "Redis", rating: 2 },
-//                         // { key: 5, url: "/Images/React.png", skillName: "SQLite", rating: 4.5 },
-//                         // { key: 6, url: "/Images/Vue.png", skillName: "Firebase", rating: 2 },
+//                         // { key: 4, url: "/Portfolio/Images/Skills/Bootstrap.png", skillName: "Redis", rating: 2 },
+//                         // { key: 5, url: "/Portfolio/Images/Skills/React.png", skillName: "SQLite", rating: 4.5 },
+//                         // { key: 6, url: "/Portfolio/Images/Skills/Vue.png", skillName: "Firebase", rating: 2 },
 //                     ]}
 //                 /> */}
 
@@ -60,24 +60,24 @@
 //                 {/* <SkillCard
 //                     Sector={"Cloud"}
 //                     Skill={[
-//                         { key: 1, url: "/Images/AWS.png", skillName: "AWS", rating: 4.5 },
-//                         // { key: 2, url: "/Images/CSS3.png", skillName: "PostgreSQL", rating: 4 },
-//                         // { key: 3, url: "/Images/JavaScript.png", skillName: "MySQL", rating: 4.5 },
-//                         // { key: 4, url: "/Images/Bootstrap.png", skillName: "Redis", rating: 2 },
-//                         // { key: 5, url: "/Images/React.png", skillName: "SQLite", rating: 4.5 },
-//                         // { key: 6, url: "/Images/Vue.png", skillName: "Firebase", rating: 2 },
+//                         { key: 1, url: "/Portfolio/Images/Skills/AWS.png", skillName: "AWS", rating: 4.5 },
+//                         // { key: 2, url: "/Portfolio/Images/Skills/CSS3.png", skillName: "PostgreSQL", rating: 4 },
+//                         // { key: 3, url: "/Portfolio/Images/Skills/JavaScript.png", skillName: "MySQL", rating: 4.5 },
+//                         // { key: 4, url: "/Portfolio/Images/Skills/Bootstrap.png", skillName: "Redis", rating: 2 },
+//                         // { key: 5, url: "/Portfolio/Images/Skills/React.png", skillName: "SQLite", rating: 4.5 },
+//                         // { key: 6, url: "/Portfolio/Images/Skills/Vue.png", skillName: "Firebase", rating: 2 },
 //                     ]}
 //                 /> */}
 
 //                 <SkillCard data-aos="zoom-in-up"
 //                     Sector={"Tools"}
 //                     Skill={[
-//                         { key: 1, url: "/Images/Git.png", skillName: "Git", rating: 4.5 },
-//                         { key: 2, url: "/Images/Vscode.png", skillName: "VS Code", rating: 4 },
-//                         { key: 3, url: "/Images/Postman.png", skillName: "Postman", rating: 4.5 },
-//                         // { key: 4, url: "/Images/Bootstrap.png", skillName: "Redis", rating: 2 },
-//                         // { key: 5, url: "/Images/React.png", skillName: "SQLite", rating: 4.5 },
-//                         // { key: 6, url: "/Images/Vue.png", skillName: "Firebase", rating: 2 },
+//                         { key: 1, url: "/Portfolio/Images/Skills/Git.png", skillName: "Git", rating: 4.5 },
+//                         { key: 2, url: "/Portfolio/Images/Skills/Vscode.png", skillName: "VS Code", rating: 4 },
+//                         { key: 3, url: "/Portfolio/Images/Skills/Postman.png", skillName: "Postman", rating: 4.5 },
+//                         // { key: 4, url: "/Portfolio/Images/Skills/Bootstrap.png", skillName: "Redis", rating: 2 },
+//                         // { key: 5, url: "/Portfolio/Images/Skills/React.png", skillName: "SQLite", rating: 4.5 },
+//                         // { key: 6, url: "/Portfolio/Images/Skills/Vue.png", skillName: "Firebase", rating: 2 },
 //                     ]}
 //                 />
 //             </Box>
@@ -129,12 +129,12 @@ const Skill = () => {
                 <SkillCard
                     Sector={"Front End"}
                     Skill={[
-                        { key: 1, url: "/Images/HTML5.png", skillName: "HTML 5", rating: 4.5 },
-                        { key: 2, url: "/Images/CSS3.png", skillName: "CSS 3", rating: 4.5 },
-                        { key: 3, url: "/Images/JavaScript.png", skillName: "JavaScript", rating: 3.5 },
-                        { key: 4, url: "/Images/Bootstrap.png", skillName: "Bootstrap", rating: 4 },
-                        { key: 5, url: "/Images/React.png", skillName: "React Js", rating: 3 },
-                        { key: 6, url: "/Images/Vue.png", skillName: "Vue Js", rating: 3.5 },
+                        { key: 1, url: "/Portfolio/Images/Skills/HTML5.png", skillName: "HTML 5", rating: 4.5 },
+                        { key: 2, url: "/Portfolio/Images/Skills/CSS3.png", skillName: "CSS 3", rating: 4.5 },
+                        { key: 3, url: "/Portfolio/Images/Skills/JavaScript.png", skillName: "JavaScript", rating: 3.5 },
+                        { key: 4, url: "/Portfolio/Images/Skills/Bootstrap.png", skillName: "Bootstrap", rating: 4 },
+                        { key: 5, url: "/Portfolio/Images/Skills/React.png", skillName: "React Js", rating: 3 },
+                        { key: 6, url: "/Portfolio/Images/Skills/Vue.png", skillName: "Vue Js", rating: 3.5 },
                     ]}
                     Animation={"zoom-in-up"}
                 />
@@ -142,12 +142,12 @@ const Skill = () => {
                 <SkillCard
                     Sector={"Back End"}
                     Skill={[
-                        { key: 1, url: "/Images/Python.png", skillName: "Python", rating: 3 },
-                        { key: 2, url: "/Images/Go.png", skillName: "Go Lang", rating: 3.5 },
-                        { key: 3, url: "/Images/Node1.png", skillName: "Node Js", rating: 2 },
-                        { key: 4, url: "/Images/MongoDB.png", skillName: "MongoDB", rating: 4.5 },
-                        { key: 5, url: "/Images/PostgresSQL.png", skillName: "PostgreSQL", rating: 4 },
-                        { key: 6, url: "/Images/MySQL.png", skillName: "MySQL", rating: 4.5 },
+                        { key: 1, url: "/Portfolio/Images/Skills/Python.png", skillName: "Python", rating: 3 },
+                        { key: 2, url: "/Portfolio/Images/Skills/Go.png", skillName: "Go Lang", rating: 3.5 },
+                        { key: 3, url: "/Portfolio/Images/Skills/Node1.png", skillName: "Node Js", rating: 2 },
+                        { key: 4, url: "/Portfolio/Images/Skills/MongoDB.png", skillName: "MongoDB", rating: 4.5 },
+                        { key: 5, url: "/Portfolio/Images/Skills/PostgresSQL.png", skillName: "PostgreSQL", rating: 4 },
+                        { key: 6, url: "/Portfolio/Images/Skills/MySQL.png", skillName: "MySQL", rating: 4.5 },
                     ]}
                     Animation={"zoom-in-up"}
                 />
@@ -155,9 +155,9 @@ const Skill = () => {
                 <SkillCard
                     Sector={"Tools"}
                     Skill={[
-                        { key: 1, url: "/Images/Git.png", skillName: "Git", rating: 4.5 },
-                        { key: 2, url: "/Images/Vscode.png", skillName: "VS Code", rating: 4 },
-                        { key: 3, url: "/Images/Postman.png", skillName: "Postman", rating: 4.5 },
+                        { key: 1, url: "/Portfolio/Images/Skills/Git.png", skillName: "Git", rating: 4.5 },
+                        { key: 2, url: "/Portfolio/Images/Skills/Vscode.png", skillName: "VS Code", rating: 4 },
+                        { key: 3, url: "/Portfolio/Images/Skills/Postman.png", skillName: "Postman", rating: 4.5 },
                     ]}
                     Animation={"zoom-in-up"}
                 />
