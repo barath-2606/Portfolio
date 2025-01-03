@@ -125,7 +125,7 @@ const Skill = () => {
                     Skills
                 </Typography></Divider>
             </Box>
-            <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: { sm: "center", xs: "center", md: "space-between" }, marginX: { md: "10%", sm: "5%", xs: "5%" }, marginY: {sm:2, xs:2, md:4} }} data-aos="zoom-in-up" >
+            <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: { sm: "center", xs: "center", md: "space-between" }, marginX: { md: "10%", sm: "5%", xs: "5%" }, marginY: {sm:1, xs:1, md:4} }} data-aos="zoom-in-up" >
                 <SkillCard
                     Sector={"Front End"}
                     Skill={[
