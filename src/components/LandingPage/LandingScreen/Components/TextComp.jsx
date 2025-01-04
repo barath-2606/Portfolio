@@ -1,5 +1,5 @@
 import { Box, Typography, Button } from "@mui/material";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import FileOpenIcon from '@mui/icons-material/FileOpen';
 import './TextComp.css';
 import { useEffect } from 'react';
 import 'aos/dist/aos.css'; // Import AOS styles
@@ -30,6 +30,10 @@ const TextComp = () => {
     };
   }, []);
 
+  const ViewResume = () =>{
+    window.open("https://drive.google.com/file/d/1eQ5aIXG1FOZ8gFV-5xMLaT-bC2axeuKQ/view?usp=sharing", "_blank", "noopener,noreferrer")
+  }
+
   return (
     <div>
       <Box sx={{ width: { md: "80%" }, marginTop: { xs: "20px", md: "50px" }, display: "flex", flexDirection: "column", justifyContent: "center", paddingX: { xs: 2, sm: 0 } }} data-aos="zoom-in-up">
@@ -58,8 +62,8 @@ const TextComp = () => {
         </Box>
 
         <Box>
-          <Button sx={{ color: "orange", fontFamily: "Chakra Petch", border: "1px solid transparent", "&:hover": { border: "1px solid orange", backgroundColor: "rgba(255, 165, 0, 0.1)", transition: "all 0.2s linear" }, marginTop: "10px", textAlign: { sm: "center", xs: "center", md: "left" } }} endIcon={<ArrowRightAltIcon sx={{ fill: "orange" }} />}>
-            Get In Touch
+          <Button sx={{ color: "orange", fontFamily: "Chakra Petch", border: "1px solid transparent", "&:hover": { border: "1px solid orange", backgroundColor: "rgba(255, 165, 0, 0.1)", transition: "all 0.2s linear" }, marginTop: "10px", textAlign: { sm: "center", xs: "center", md: "left" } }} onClick={ViewResume} startIcon={<FileOpenIcon sx={{ fill: "orange" }}/>}>
+            View Resume
           </Button>
         </Box>
       </Box>
