@@ -111,6 +111,10 @@ const Contact = () => {
                         setMode("success")
                         setStatus("Email sent successfully!");
                         setMsg("Email sent successfully!");
+                        setName("")
+                        setToEmail("")
+                        setSubject("")
+                        setMessage("")
                     },
                     (error) => {
                         console.error("Error sending email:", error);
@@ -161,16 +165,16 @@ const Contact = () => {
                     <Typography textAlign={'center'} variant="h5" sx={{ m: 1, color: "black", fontFamily: "Titillium Web", fontWeight: "bold" }}>Get In Touch</Typography>
 
                     {/* TextField For Enter UserName */}
-                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Name" size="small" onChange={HandleNameChange} />
+                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Name" size="small" value={name} onChange={HandleNameChange} />
 
                     {/* TextField for Enter User Mail Id */}
-                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Email" size="small" onChange={HandleMailChange} />
+                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Email" size="small" value={toEmail} onChange={HandleMailChange} />
 
                     {/* TextField for enter Subject of the Mail */}
-                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Subject" size="small" onChange={HandleSubjectChange} />
+                    <TextField color="black" sx={{ marginBottom: "20px", marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, }} label="Subject" size="small" value={subject} onChange={HandleSubjectChange} />
 
                     {/* TextField for enter the Message */}
-                    <TextField color="black" sx={{ marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, marginBottom: "10px" }} label="Message" size="small" multiline rows={5} onChange={HandleMessageChange} />
+                    <TextField color="black" sx={{ marginX: "3%", "& .MuiOutlinedInput-root": { "& fieldset": { borderColor: "black", border: "2px solid black" }, "&:hover fieldset": { borderColor: "black", }, "&.Mui-focused fieldset": { borderColor: "black", }, }, "& .MuiInputLabel-root": { color: "black", }, "& .MuiInputLabel-root.Mui-focused": { color: "black", }, marginBottom: "10px" }} label="Message" size="small" multiline rows={5} value={message} onChange={HandleMessageChange} />
 
                     {/* <TextField color="white" label="Email" sx={{ marginBottom:"20px", marginX:"3%"}} size="small"></TextField>
                 <TextField color="white" label="Subject" sx={{ marginBottom:"20px", marginX:"3%"}} size="small"></TextField>
